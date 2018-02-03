@@ -25,10 +25,10 @@ Route::get('/', function () {
 
 //Route::get('/', )
 Route::get('/editoras', 'EditoraController@index');
+Route::get('/editoras/cria', 'EditoraController@cria');
 Route::get('/editoras/{editora}', 'EditoraController@show');
 Route::get('/editoras/{editora}/edit', 'EditoraController@edit');
 Route::put('/editoras/{editora}', 'EditoraController@update');
 
-Route::get('/editoras/cria', 'EditoraController@cria');
 
 Route::post('/editoras', 'EditoraController@armazena');

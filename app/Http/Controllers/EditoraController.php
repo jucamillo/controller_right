@@ -21,6 +21,10 @@ class EditoraController extends Controller
 
    public function armazena()
    {
+     $this->validate(request(), [
+       'nome' => 'required|min:2|max:255',
+       'email' => 'required|email'
+    ]);
      Editora::create(request()->all());
      return redirect('/editoras');
    }

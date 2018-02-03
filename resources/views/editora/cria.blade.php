@@ -20,6 +20,15 @@
       </div>
     </div>
     <div class="col-md-6">
+      @if(count($errors) > 0)
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $message)
+              <li>{{ $message }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
       <form action="/editoras" method="POST">
         {{csrf_field()}}
         <div class="form-group">
